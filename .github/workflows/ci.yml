@@ -20,5 +20,5 @@ jobs:
         script: |
           cd ~/sw.imajiugm.com
           git stash
-          git pull --force origin main
+          git pull --force origin master
           hugo
