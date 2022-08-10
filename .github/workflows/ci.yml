@@ -9,16 +9,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Deploy to VPS
-      uses: appleboy/ssh-action@master
       with:
-        host: sw.imajiugm.com
-        username: ${{ secrets.user }}
-        key: ${{ secrets.ssh }}
-        port: ${{ secrets.port }}
-        passphrase: ${{ secrets.passphrase }}
-        script: |
-          cd ~/sw.imajiugm.com
-          git stash
-          git pull --force origin master
-          hugo
+        submodules: true
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+    - name: Build
+      run: hugo
+    - name: Deploy
+      uses: up9cloud/action-rsync@v1.1
+      env:
+        HOST: sw.imajigum.com
+        KEY: ${{secrets.SSH}}
+        SOURCE: ./public/
+        TARGET: ~/public_html/sw/
+        USER: ${{secrets.USER}}
+        PORT: ${{secrets.PORT}}
+        ARGS: --rtvzP
