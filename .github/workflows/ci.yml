@@ -27,4 +27,4 @@ jobs:
         TARGET: ~/public_html/sw/
         USER: ${{secrets.USER}}
         PORT: ${{secrets.PORT}}
-        ARGS: --rtvzP
+        ARGS: -rtvzP
