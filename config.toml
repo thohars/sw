@@ -7,11 +7,6 @@ theme= ["hugo-video", "gruvhugo"]
 defaultExtension= "md"
 metaDataFormat= "yaml"
 
-[taxonomies]
-  tag      = "tags"
-  category = "categories"
-  series   = "series"
-
 [params.main]
   enabled = true
   enableKatex = true

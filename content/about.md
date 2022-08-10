@@ -2,7 +2,6 @@
 title = "About"
 description = "About Semata Wayang"
 date = "2022-07-30"
-aliases = ["about", "contact"]
 author = "Semata Wayang"
 +++
 
