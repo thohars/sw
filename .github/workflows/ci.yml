@@ -21,7 +21,7 @@ jobs:
     - name: Deploy
       uses: up9cloud/action-rsync@v1.1
       env:
-        HOST: sw.imajigum.com
+        HOST: sw.imajiugm.com
         KEY: ${{secrets.SSH}}
         SOURCE: ./public/
         TARGET: ~/public_html/sw/
